@@ -1,10 +1,10 @@
 'use strict';
-// //1
+//1
 const x = 7;
 const y = 10;
 x > y ? console.log('X больше Y') : console.log('X НЕ больше Y');
 
-// //2
+//2
 const num = prompt('Введите число');
 if (num === null || isNaN(+num) || num.trim() === '') {
     alert('Упс');
@@ -20,7 +20,8 @@ const sign = Math.sign(+int) === 1 || Math.sign(+int) === 0 ? 'положите�
 if (int === null || isNaN(+int) || int.trim() === '') {
     alert('Число введи!');
 }else if (Number.isInteger(+int)) {
-    alert(`Число "${int}" - ${sign}, содержит ${int.length} символ(а)`);
+    const stringLength = int[0] === '-' ? int.length - 1 : int.length;
+    alert(`Число "${int}" - ${sign}, содержит ${stringLength} символ(а)`);
 }else {
     alert('Нужно число без точки!');
 }
