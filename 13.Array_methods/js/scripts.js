@@ -27,13 +27,15 @@ console.log(arr[arr.length-1]);
 
 //7
 arr = [1, 2, 3, 4, 5];
-arr.push([1, 2, 3]);
-console.log(arr);
+let updatedArr = arr.concat([1, 2, 3]);
+// arr.push([1, 2, 3]);
+console.log(updatedArr);
 
 //8
 arr = [1, 2, 3, 4, 5];
-arr.push([4, 5]);
-console.log(arr);
+updatedArr = arr.concat([4, 5]);
+// arr.push([4, 5]);
+console.log(updatedArr);
 
 //9
 arr = [1, 2, 3, 4, 5];
@@ -42,8 +44,9 @@ console.log(arr);
 
 //10
 arr = [1, 2, 3, 4, 5];
-arr.push([2, 3, 4]);
-console.log(arr);
+updatedArr = arr.concat([2, 3, 4]);
+// arr.push([2, 3, 4]);
+console.log(updatedArr);
 
 //11
 arr = [1, 2, 3, 4, 5];
