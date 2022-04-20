@@ -27,14 +27,12 @@ console.log(arr[arr.length-1]);
 
 //7
 arr = [1, 2, 3, 4, 5];
-let updatedArr = arr.concat([1, 2, 3]);
-// arr.push([1, 2, 3]);
+let updatedArr = arr.filter(item => item <= 3);
 console.log(updatedArr);
 
 //8
 arr = [1, 2, 3, 4, 5];
-updatedArr = arr.concat([4, 5]);
-// arr.push([4, 5]);
+updatedArr = arr.filter(item => item > 3);
 console.log(updatedArr);
 
 //9
@@ -44,8 +42,7 @@ console.log(arr);
 
 //10
 arr = [1, 2, 3, 4, 5];
-updatedArr = arr.concat([2, 3, 4]);
-// arr.push([2, 3, 4]);
+updatedArr = arr.slice(1,4);
 console.log(updatedArr);
 
 //11
