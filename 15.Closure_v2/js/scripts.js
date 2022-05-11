@@ -1,35 +1,27 @@
 'use strict';
+
 (function () {
-    const randomNum = () => {
-        const generateNum = [];
-        return function () {
-            let newNum = Math.floor(Math.random() * 100 + 1);
-            for (let i = 0; i < generateNum.length; i++) {
-                if (generateNum[i] === newNum) {
-                    return
+
+    const randomNumArr = () => {
+        const generateArr = [];
+        const randomNum = () => {
+
+            for (let i = 0; i < 100; i++) {
+                const newNum = Math.floor(Math.random() * 100 + 1);
+                if (generateArr.includes(newNum)) {
+                    if (generateArr.length === 100) return
+                    randomNum()
+                    return generateArr
                 }
+                generateArr.push(newNum);
             }
-            generateNum.push(newNum);
-            return generateNum;
+            return generateArr;
         }
+        return randomNum();
     }
-    const random = randomNum();
-    console.log(random());
-    console.log(random());
-    console.log(random());
-    console.log(random());
-    console.log(random());
-    console.log(random());
-    console.log(random());
-    console.log(random());
-    console.log(random());
-    console.log(random());
-    console.log(random());
-    console.log(random());
-    console.log(random());
-    console.log(random());
-    console.log(random());
-    console.log(random());
-    console.log(random());
-    console.log(random());
+    const random = randomNumArr();
+
+    console.log(random);
+    console.log(random.sort((a,b) => a - b))
+
 })();
