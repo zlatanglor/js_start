@@ -6,15 +6,14 @@
 
     const generateList = (array) => {
 
-        return `<ul>${array.reduce((str, el) => {
-                str += `<li>${Array.isArray(el) ? generateList(el) : el }</li>`;
-                return str;
-            },
-            '')}</ul>`;
+        return `<ul>${array.reduce((str, item) => {
+            str += `<li>${Array.isArray(item) ? generateList(item) : item }</li>`;
+            return str;
+        }, '')}</ul>`;
 
     }
 
     const  generatedList = generateList(arr);
-    document.body.insertAdjacentHTML("afterbegin", generatedList)
+    document.body.insertAdjacentHTML("afterbegin", generatedList);
 
 })();
