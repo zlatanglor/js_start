@@ -4,16 +4,26 @@
 
     const arr = [1, 2, 3, [4, 5, [6], 5, 4], 3, 2, 1];
 
-    const generateList = (array) => {
+    const generateList = array => {
 
-        return `<ul>${array.reduce((str, item) => {
-            str += `<li>${Array.isArray(item) ? generateList(item) : item }</li>`;
-            return str;
-        }, '')}</ul>`;
+        const ul = document.createElement('ul');
+        for (let item of array) {
+            const li = document.createElement('li');
+            let innerUlList = null;
+            if (Array.isArray(item)) {
+                innerUlList = generateList(item);
+            } else {
+                innerUlList = document.createTextNode(item);
+            }
+            li.append(innerUlList);
+            ul.append(li);
+
+        }
+
+        return ul;
 
     }
 
-    const  generatedList = generateList(arr);
-    document.body.insertAdjacentHTML("afterbegin", generatedList);
+    document.body.prepend(generateList(arr))
 
 })();
