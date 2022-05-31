@@ -19,11 +19,11 @@
             ul.append(li);
 
         }
-
+        document.body.prepend(ul);
         return ul;
 
-    }
+    };
 
-    document.body.prepend(generateList(arr))
+    generateList(arr);
 
 })();
